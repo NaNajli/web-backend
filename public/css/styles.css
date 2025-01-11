@@ -6,16 +6,15 @@
 *:before,
 *:after {
   box-sizing: border-box;
-
 }
 /* Header */
+
 #top-header{
   display: flex;
   justify-content: space-between;
-  margin:3%;
-  
-  
+  margin:3%;  
 }
+
 .siteName
 {
  font-family:"Baskervville";
@@ -46,16 +45,27 @@ a{ text-decoration: none;}
 
   h1{margin: 5%;}
 
+  html{background-image: url("/images/site/small_check.jpg");}
+  body{background-color: white;
+  margin: 8%;}
+  
+
   .dmc{
     color: #415a77;
-  text-align: left;
-    margin :5%}
+    text-align: left;
+    margin :5%;
+    display: flex;
+    }
 
  .dmc button{background-color: #415a77;
-             margin: 1%;
-             padding: 1%;
+             margin: 15%;
+             padding: 5%;
              color:white;
+             background-color: #415a77;
             }
+ .sign{margin-left: 3%;}     
+ 
+.review{display: flex;}
  
 
 @media screen and (max-width: 800px)
@@ -64,4 +74,7 @@ a{ text-decoration: none;}
    h1{font-size: large;}
    h2{font-size: medium;}
    h3{font-size: medium;}
+
+   
+  html{background-image: none;}
 }
