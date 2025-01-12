@@ -46,27 +46,95 @@ a{ text-decoration: none;}
   h1{margin: 5%;}
 
   html{background-image: url("/images/site/small_check.jpg");}
+
   body{background-color: white;
-  margin: 8%;}
-  
-
+       margin-top: 7%;
+       margin: 5%;
+       border: 8px solid #778DA9;   
+  }
   .dmc{
-    color: #415a77;
-    text-align: left;
-    margin :5%;
-    display: flex;
-    }
+    display: grid;
+    grid-template-rows: 1fr  ;
+    grid-template-columns: 1fr 2rf 1rf;
+    text-align: center;
+    margin-right: 20%;
+  }
+ 
 
- .dmc button{background-color: #415a77;
-             margin: 15%;
-             padding: 5%;
-             color:white;
-             background-color: #415a77;
+ .dmc button{
+  background-color: #0D1B2A;
+  padding: 5%;
+  color:white;
+  width: 80%;
+  height: auto;
+            
             }
- .sign{margin-left: 3%;}     
+ .sign{
+  width: 30%;
+  height: 80%;
+  text-align: center;
+  background-color:#E0E1DD ;
+  opacity:0.9;
+  padding-top: 3%;
+  margin-top: 5%;
+  z-index: 1;
+  grid-row: 1/1;
+  grid-column: 2/2;
+  color:#006d77;
+}  
+
+.imagen{
+  grid-row: 1/1;
+  grid-column: 2/3;
+}
+.review{
+  display: flex;
+  flex-direction: row;
+  font-size:medium;
+  text-align: left;
+  padding-right:20px;
+ }
+ .review li{
+  padding-top: 10%;
+  text-align: left;
+  font-size:larger;
+}
+
+ .review h1{
+  margin-top: 15%;
+  text-align: left;
+  font-size:x-large;
  
-.review{display: flex;}
- 
+}
+.review-list{margin-right: 15%;
+  }
+
+.upgrades-img {
+  float: left;
+  margin: 5%;
+  align-items: center;
+  width: 100px;
+  height: auto;
+  
+} 
+
+.upgrades-img img
+{
+  background-color: #006d77;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  width: 100%;
+  height: auto;
+  border: 1px solid #0D1B2A;
+}
+.upgrades-img h1{font-size: large;}
+
+
+/* footer */
+footer{font-size: larger;}
+  
 
 @media screen and (max-width: 800px)
 {
@@ -77,4 +145,22 @@ a{ text-decoration: none;}
 
    
   html{background-image: none;}
+  body {border:none;}
+  .sign{
+    padding-top:5%;
+    width: 50%;
+    height: 100%;}
+  .review{
+  flex-direction: column;  
+  }
+  .upgrades-img {
+    float: left;
+    margin: 9%;
+    align-items: center;
+    width: 85px;
+    height: auto;
+    
+  } 
+  
 }
+
