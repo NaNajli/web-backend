@@ -55,7 +55,7 @@ a{ text-decoration: none;}
   .dmc{
     display: grid;
     grid-template-rows: 1fr  ;
-    grid-template-columns: 1fr 2rf 1rf;
+    grid-template-columns: 1fr 2fr 1fr;
     text-align: center;
     margin-right: 20%;
   }
