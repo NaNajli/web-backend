@@ -87,6 +87,8 @@ a{ text-decoration: none;}
   grid-row: 1/1;
   grid-column: 2/3;
 }
+
+
 .review{
   display: flex;
   flex-direction: row;
@@ -161,6 +163,7 @@ footer{font-size: larger;}
     height: auto;
     
   } 
+  .imagen img{width: 100vw;}
   
 }
 
