@@ -7,7 +7,7 @@ const Util = {}
 Util.getNav = async function (req, res, next) {
   let data = await invModel.getClassifications()
   console.log(data)
-  let list = "<ul class='nav'>"
+  let list = "<ul class= display-nav>"
   list += '<li><a href="/" title="Home page">Home</a></li>'
   data.rows.forEach((row) => {
     list += "<li>"
@@ -24,6 +24,8 @@ Util.getNav = async function (req, res, next) {
   list += "</ul>"
   return list
 }
+
+
 /* **************************************
 * Build the classification view HTML
 * ************************************ */

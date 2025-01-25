@@ -30,7 +30,7 @@ a{ text-decoration: none;}
 
 /* Navigation */
 
-.nav{
+.display-nav{
   display: flex;
   justify-content:space-around;
   background-color: #1b263b;
@@ -44,7 +44,7 @@ a{ text-decoration: none;}
   /* body */
 
   h1{margin: 5%;}
-
+ 
   html{background-image: url("/images/site/small_check.jpg");}
 
   body{background-color: white;
