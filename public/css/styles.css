@@ -36,10 +36,11 @@ a{ text-decoration: none;}
   background-color: #1b263b;
   font-family:"Marcellus" ;
   font-size: medium;
-  color:white;
   padding: 2%;
   list-style-type: none;
   }
+
+  .display-nav a{ color:white;}
 
   /* body */
 
@@ -136,6 +137,15 @@ a{ text-decoration: none;}
 
 /* footer */
 footer{font-size: larger;}
+
+/* second page */
+#inv-display{ display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#inv-display li{flex-direction: column;
+ 
+  }
   
 
 @media screen and (max-width: 800px)
@@ -164,6 +174,10 @@ footer{font-size: larger;}
     
   } 
   .imagen img{width: 100vw;}
+
+  /* second page */
+  #inv-display li{flex-direction: row;
   
 }
 
+}
