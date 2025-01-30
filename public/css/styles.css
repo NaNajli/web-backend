@@ -141,11 +141,32 @@ footer{font-size: larger;}
 /* second page */
 #inv-display{ display: flex;
   justify-content: space-around;
+  gap: 5px;
   flex-wrap: wrap;
 }
 #inv-display li{flex-direction: column;
- 
+  list-style-type: none;
+  background-color: #E0E1DD;
+  padding: 2%;
+  text-align: center;
   }
+#inv-display a {
+  font-family: "Marcellus";
+  color:#0D1B2A}  
+
+  /* View Detail */
+
+  #detail  {
+    text-align: center;
+    font-family: "Marcellus";
+    color:#0D1B2A;
+    
+    
+  }
+  #detail li{  
+    list-style-type: none;
+    }
+  
   
 
 @media screen and (max-width: 800px)
