@@ -136,10 +136,13 @@ a{ text-decoration: none;}
 
 
 /* footer */
-footer{font-size: larger;}
+footer{
+  font-size: larger;
+  margin-top: 200px;}
 
 /* second page */
-#inv-display{ display: flex;
+#inv-display{ 
+  display: flex;
   justify-content: space-around;
   gap: 5px;
   flex-wrap: wrap;
@@ -148,6 +151,7 @@ footer{font-size: larger;}
   list-style-type: none;
   background-color: #E0E1DD;
   padding: 2%;
+  margin: 2%;
   text-align: center;
   }
 #inv-display a {
@@ -156,18 +160,26 @@ footer{font-size: larger;}
 
   /* View Detail */
 
-  #detail  {
-    text-align: center;
-    font-family: "Marcellus";
-    color:#0D1B2A;
+  #detail div{
     
+    font-family: "Marcellus";
+    color:#0D1B2A;  
     
   }
+  .detail-div{
+    text-align: left;
+    } 
   #detail li{  
     list-style-type: none;
+    
     }
+  #detail img{
+    float: left;
+    width: 35vw;
+    height: auto;
+    margin:3%}
   
-  
+  #detail h1{margin: 0%;}
 
 @media screen and (max-width: 800px)
 {
@@ -200,5 +212,12 @@ footer{font-size: larger;}
   #inv-display li{flex-direction: row;
   
 }
+#detail img{
+  float: none;
+  width:70vw;
+  margin:1%;}
 
+  .detail-div{
+    text-align: left;
+    } 
 }

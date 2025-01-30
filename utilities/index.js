@@ -65,13 +65,14 @@ Util.buildInventoryView = async function (data){
   let viewDetail = ""
           viewDetail += '<ul id="detail">'
           viewDetail += '<li>'
-          viewDetail += '<h2>' + data.inv_make + ' ' + data.inv_model +'</h2>' 
           viewDetail += '<img src="'+ data.inv_image + '" alt="Image of '+ data.inv_model +'"/>'
+          viewDetail += '<div class="detail-div">'
+          viewDetail += '<h2>' + data.inv_make + ' ' + data.inv_model +'</h2>' 
           viewDetail += '<h1>'+' Price :'+'<span> $' + new Intl.NumberFormat('en-US').format(data.inv_price) + '</span>'+'</h1>'
           viewDetail += '<p><strong> Description:</strong> '+ data.inv_description + '</p>'
-          viewDetail += '<hr />'
-          viewDetail += '<p><strong> Color: </strong>' + data.inv_color +'</p>'
-          viewDetail += '<p><strong> Miles: </strong>' + new Intl.NumberFormat('en-US').format(data.inv_miles) +'</p>'
+          viewDetail += '<p>'+'<strong> Color: </strong>' + data.inv_color +'</p>'
+          viewDetail += '<p>'+'<strong> Mileage: </strong>' + new Intl.NumberFormat('en-US').format(data.inv_miles) +'</p>'
+          viewDetail += '</div>'
           viewDetail += '</li>' 
           viewDetail += '</ul>'
   return viewDetail
