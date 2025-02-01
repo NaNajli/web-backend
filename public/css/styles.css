@@ -181,6 +181,36 @@ footer{
   
   #detail h1{margin: 0%;}
 
+  /* form */
+
+  form
+  {
+    text-align: center;
+    font-size: larger;
+    font-family: "Marcellus";
+    margin: 5%;
+    background-color: #415A77;
+    color: white;
+    padding: 3%;
+    
+   }
+#submit{font-size: large;
+border-radius: 5px;
+padding: 1%;
+background-color:#E0E1DD ;
+color:#0D1B2A;
+font-family: "Marcellus";} 
+
+.sing-up{color:#0D1B2A;
+  font-family: "Marcellus";
+  font-size: large;}
+  
+
+#email, #password{font-size: x-large;}
+
+  .sing-up{text-align: center;
+  color: #0D1B2A;}
+
 @media screen and (max-width: 800px)
 {
    /* body */
@@ -220,4 +250,6 @@ footer{
   .detail-div{
     text-align: left;
     } 
+/* form */
+    #email, #password{font-size: large;}  
 }
