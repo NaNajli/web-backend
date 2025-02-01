@@ -194,6 +194,17 @@ footer{
     padding: 3%;
     
    }
+
+   .form-register{
+    text-align: center;
+    font-size: larger;
+    font-family: "Marcellus";
+    background-color: #415A77;
+    color: white;
+    margin: 15%;
+    
+  
+   }
 #submit{font-size: large;
 border-radius: 5px;
 padding: 1%;
@@ -206,7 +217,15 @@ font-family: "Marcellus";}
   font-size: large;}
   
 
-#email, #password{font-size: x-large;}
+#email,
+#password,
+#account_email,
+#account_password,
+#account_firstname,
+#account_lastname{
+font-size: x-large;
+margin: 1%;
+}
 
   .sing-up{text-align: center;
   color: #0D1B2A;}
