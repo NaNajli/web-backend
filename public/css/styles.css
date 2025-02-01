@@ -203,8 +203,9 @@ footer{
     color: white;
     margin: 15%;
     
-  
    }
+
+   .form-register span{font-size: small;}
 #submit{font-size: large;
 border-radius: 5px;
 padding: 1%;
