@@ -4,9 +4,9 @@
       res.redirect('/')
     } %>
 
-    <% message %>
+    <%- messages() %>
 
-<form >
+<form id="loginForm" action="/account/login" method="post">
 <label for="email"  class="email"> Email: </label><br>
 <input type="text" id="email" name="email" autocomplete="username"><br>
 <label for="password" class="password">Password:</label><br>
@@ -14,5 +14,5 @@
 <input type="submit" id="submit" value="Submit">
 </form>
 <div class="sing-up">
-  <a  href="/account/register"> Sing-up </a>
+<a  href="/account/register"> Sing-up </a>
 </div>
