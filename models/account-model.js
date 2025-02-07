@@ -25,4 +25,9 @@ async function checkExistingEmail(account_email){
   }
 }
 
-  module.exports = {registerAccount,checkExistingEmail}
+/* *****************************
+*   Register new classification
+* *************************** */
+
+
+  module.exports = {registerAccount,checkExistingEmail }

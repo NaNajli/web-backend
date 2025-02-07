@@ -138,7 +138,7 @@ a{ text-decoration: none;}
 /* footer */
 footer{
   font-size: larger;
-  margin-top: 200px;}
+  margin-top: 400px;}
 
 /* second page */
 #inv-display{ 
@@ -230,6 +230,41 @@ margin: 1%;
 
   .sing-up{text-align: center;
   color: #0D1B2A;}
+
+
+  /* Management */
+
+  .management{ 
+    font-size: large;
+    list-style-type: none;
+    margin: 5%;  
+  }
+  .management a {
+    color: #1B263B;
+     }
+ .management li{margin-top: 5px;}  
+ 
+ 
+ /* Add new Classification */
+
+ .view-add-cla{font-size:x-small;}
+
+
+ .add-inventory-form{margin: 3%;
+text-align: left;}
+
+#classificationList{
+  text-align: center;
+    font-size:medium;
+    font-family: "Marcellus";
+    background-color: #415A77;
+    color: white;
+    margin-bottom:3%;
+   
+}
+
+.add-inventory-form #submit{margin-top: 5%;}
+
 
 @media screen and (max-width: 800px)
 {
