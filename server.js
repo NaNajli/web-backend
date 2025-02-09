@@ -17,13 +17,7 @@ const session = require("express-session")
 const pool = require('./database/')
 const accountRoute = require ("./routes/accountRoute")
 const bodyParser = require("body-parser")
-
-/* ***********************
- * View Engine and Templates
- *************************/
-app.set("view engine", "ejs")
-app.use(expressLayouts)
-app.set("layout", "./layouts/layout") // not at views root
+const cookieParser = require("cookie-parser")
 
 /* ***********************
  * Middleware
@@ -49,6 +43,16 @@ app.use(function(req, res, next){
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
+app.use(cookieParser())
+app.use(utilities.checkJWTToken)
+
+/* ***********************
+ * View Engine and Templates
+ *************************/
+app.set("view engine", "ejs")
+app.use(expressLayouts)
+app.set("layout", "./layouts/layout") // not at views root
+
 /* ***********************
  * Routes
  *************************/
@@ -62,7 +66,6 @@ app.use("/inv", inventoryRoute)
 // Account routes
 
 app.use("/account" , accountRoute )
-
 
 // File Not Found Route - must be last route in list
 app.use(async (req, res, next) => {

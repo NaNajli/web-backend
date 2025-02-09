@@ -19,6 +19,7 @@ router.get("/add-classification" , utilities.handleErrors(invController.buildAdd
 
 //route to build Add new inventory
 
+// router.get("/add-inventory" , invController.buildAddInventory)
 router.get("/add-inventory" , invController.buildAddInventory)
 
 

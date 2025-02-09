@@ -69,14 +69,16 @@ invCont.buildAddInventory = async function(req, res, next)
 {
   let nav = await utilities.getNav()
   const management = await utilities.buildMngView()
-  const viewAddInv = await utilities.buildAddInventoryView()
+  // const viewAddInv = await utilities.buildAddInventoryView()
+  let  classificationList = await utilities.buildClassificationList()
   res.render("inventory/add-inventory", 
     // res.render("./inventory/add-inventory", 
     {
       title: "Add new Inventory",
       nav,
       management,
-      viewAddInv,
+      // viewAddInv,
+      classificationList,
     })
 }
 
@@ -87,6 +89,7 @@ invCont.buildAddInventory = async function(req, res, next)
 
  invCont.addNewClassification  = async function(req, res) {
     nav = await utilities.getNav()
+    const viewAddCla = await utilities.buildAddClassiView()
     const { classification_name} = req.body
 
     const regResult = await invModel.addNewClassification(
@@ -100,6 +103,7 @@ invCont.buildAddInventory = async function(req, res, next)
       res.status(201).render("inventory/add-classification", {
         title: "Add new Classification",
         nav,
+        viewAddCla,
       
       })
     } else {
@@ -128,6 +132,7 @@ invCont.buildAddInventory = async function(req, res, next)
             inv_color} = req.body
 
     const regResult = await invModel.addNewInventory(
+      
       inv_make ,
       inv_model,
       inv_description,
