@@ -96,11 +96,11 @@ Util.buildAddClassiView = async function()
 
   return viewAddCla
 }
-/*
+
 Util.buildAddInventoryView = async function()
 {
   const data = await Util.buildClassificationList()
-  let viewAddInv = ''
+  let viewAddInv = ""
       viewAddInv += '<form class="add-inventory-form" action="add-inventory" method="post">'+'<br>'
       viewAddInv += '<div>' + data + '</div>'
     /*  viewAddInv += '<select id="" name="cars"><br>'
@@ -110,31 +110,31 @@ Util.buildAddInventoryView = async function()
       viewAddInv += '<option value="classification_id">SUV</option>'
       viewAddInv += '<option value="classification_id">Truck</option>'
        viewAddInv += '<option value="classification_id"></option>'
-      viewAddInv += '</select><br>'*//*
-      viewAddInv += '<label for="make">Make:</label><br>'
+      viewAddInv += '</select><br>'*/
+      viewAddInv += '<label for="inv_make">Make:'+'</label><br>'
       viewAddInv += '<input type="text" name="inv_make" id="inv_make" required value="" ><br>'
-      viewAddInv += '<label for="model">Model:</label><br>'
+      viewAddInv += '<label for="inv_model">Model:' + '</label><br>'
       viewAddInv += '<input type="text" name="inv_model" id="inv_model" required value=""><br>'
-      viewAddInv += '<label for="description"> Description:</label><br>'
-      viewAddInv += '<textarea name="inv_description"  rows="6" cols="30" required> </textarea><br>'
-      viewAddInv += '<label for= "image">Imagen Path:<br>'
+      viewAddInv += '<label for="inv_description"> Description:' + '</label><br>'
+      viewAddInv += '<textarea id="inv_description" name="inv_description"  rows="6" cols="30" required> </textarea><br>'
+      viewAddInv += '<label for= "inv_image">Imagen Path:' + '</label>'+'<br>'
       viewAddInv += '<input type="text" name="inv_image" id="inv_image" required><br>'
-      viewAddInv += '<label for= "imaget">Thumbnail Path:<br>'
+      viewAddInv += '<label for= "inv_thumbnail">Thumbnail Path:' + '</label>'+'<br>'
       viewAddInv += '<input type="text" name="inv_thumbnail" id="inv_thumbnail" required><br>'
-      viewAddInv += '<label for="price"> Price:<br>'
+      viewAddInv += '<label for="inv_price"> Price:' + '</label>'+'<br>'
       viewAddInv += '<input type="text" id="inv_price" name="inv_price" required><br>'
-      viewAddInv += '<label for="year"> Year:<br>'
+      viewAddInv += '<label for="inv_year"> Year: '+ '</label>'+'<br>'
       viewAddInv += '<input type="text" id="inv_year" name="inv_year" required><br>'
-      viewAddInv += '<label for="miles"> Miles:<br>'
+      viewAddInv += '<label for="inv_miles"> Miles:' + '</label>'+'<br>'
       viewAddInv += '<input type="text" id="inv_miles" name="inv_miles" required><br>'
-      viewAddInv += '<label for="color">Color:</label><br>'
+      viewAddInv += '<label for="inv_color">Color:' + '</label>'+'<br>'
       viewAddInv += '<input type="text" name="inv_color" id="inv_color" required value=""><br>'
       viewAddInv += '<input type="submit" id="submit" value="Add Vehicle">'
       viewAddInv += '</form>'
      
   return viewAddInv    
 }
-*/
+
 
 Util.buildMngView = async function()
 {
@@ -149,7 +149,7 @@ Util.buildMngView = async function()
       viewMng += '</ul>' 
       return viewMng
 }
-
+/*
 Util.buildClassificationList = async function (classification_id = null) {
   let data = await invModel.getClassifications()
   let classificationList = '<form class="add-inventory-form" action="add-inventory" method="post">'+'<br>'
@@ -190,7 +190,26 @@ Util.buildClassificationList = async function (classification_id = null) {
 
   return classificationList
 }
+*/
 
+Util.buildClassificationList = async function (classification_id = null) {
+  let data = await invModel.getClassifications()
+  let classificationList =
+    '<select name="classification_id" id="classificationList" required>'
+  classificationList += "<option value=''>Choose a Classification</option>"
+  data.rows.forEach((row) => {
+    classificationList += '<option value="' + row.classification_id + '"'
+    if (
+      classification_id != null &&
+      row.classification_id == classification_id
+    ) {
+      classificationList += " selected "
+    }
+    classificationList += ">" + row.classification_name + "</option>"
+  })
+  classificationList += "</select>"
+  return classificationList
+}
 
 /* ****************************************
  * Middleware For Handling Errors

@@ -20,17 +20,18 @@ router.get("/add-classification" , utilities.handleErrors(invController.buildAdd
 //route to build Add new inventory
 
 // router.get("/add-inventory" , invController.buildAddInventory)
-router.get("/add-inventory" , invController.buildAddInventory)
+router.get("/add-inventory" ,utilities.handleErrors(invController.buildAddInventory))
 
 
 //router.post("/add-classification", invController.buildAddClassification)
 
 
-router.post("/add-classification", utilities.handleErrors(invController.addNewClassification))
+router.post("/add-classification",
+      utilities.handleErrors(invController.addNewClassification))
 
 router.post("/add-inventory",
-     regValidate.registationRules(),
-     regValidate.checkRegData,
+     //regValidate.registationRules(),
+     //regValidate.checkRegData,
      utilities.handleErrors(invController.addNewInventory))
 
      
