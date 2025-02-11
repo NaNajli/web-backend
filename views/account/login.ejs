@@ -8,11 +8,13 @@
 
 <form id="loginForm" action="/account/login" method="post">
 <label for="email"  class="email"> Email: </label><br>
-<input type="text" id="email" name="email" autocomplete="username"><br>
+<input type="text" id="account_email" name="account_email" autocomplete="username"><br> 
 <label for="password" class="password">Password:</label><br>
-<input type="password" id="password" name="password"  autocomplete="current-password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"><br>
+<input type="password" id="account_password" name="account_password"  autocomplete="current-password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" ><br>
 <input type="submit" id="submit" value="Submit">
 </form>
 <div class="sing-up">
 <a  href="/account/register"> Sing-up </a>
 </div>
+
+
