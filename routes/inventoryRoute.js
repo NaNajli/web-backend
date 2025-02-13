@@ -30,13 +30,21 @@ router.post("/add-classification",
       utilities.handleErrors(invController.addNewClassification))
 
 router.post("/add-inventory",
-     //regValidate.registationRules(),
-     //regValidate.checkRegData,
+     regValidate.registationRules(),
+     regValidate.checkRegData,
      utilities.handleErrors(invController.addNewInventory))
 
 
 router.get("/getInventory/:classification_id", 
 utilities.handleErrors(invController.getInventoryJSON))     
 
-     
+//view to edit inventory
+router.get("/edit/:inv_id", 
+utilities.handleErrors(invController.viewInventoryUpdate))  
+ 
+router.post("/edit/:inv_id", 
+      regValidate.newInventoryRules(),
+      regValidate.checkUpdateData,
+      utilities.handleErrors(invController.updateInventory))
+ 
 module.exports = router;

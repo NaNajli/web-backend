@@ -1,0 +1,47 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+  <% } else {
+    res.redirect('/')
+  } %>
+
+
+<% if (errors) { %>
+  <ul class="notice">
+<% errors.array().forEach(error => { %>
+  <li><%= error.msg %></li>
+<% }) %>    
+  </ul>
+<% } %>
+
+  <%- messages() %>
+
+  <form action="/inv/edit-inventory" method="post" id="updateForm" form="edit-vehicle"><br>
+  <p>Modifying new Item</p>  
+  <%- classificationSelect %><br>
+  <label for="inv_make">Make:</label><br>
+  <input type="text" name="inv_make" id="inv_make" required value="<%= locals.inv_make%>"><br>
+  <label for="inv_model">Model:</label><br>
+  <input type="text" name="inv_model" id="inv_model" required value="<%= locals.inv_model %>"><br>
+  <label for="inv_description"> Description:</label><br>
+  <textarea id="inv_description" name="inv_description"  rows="6" cols="30" required value="<%= locals.inv_description %>"></textarea><br>
+  <label for= "inv_image">Imagen Path:</label><br>
+  <input type="text" name="inv_image" id="inv_image" required value="<%= locals.inv_image %>"><br>
+  <label for= "inv_thumbnail">Thumbnail Path:</label><br>
+  <input type="text" name="inv_thumbnail" id="inv_thumbnail" required value="<%= locals.inv_thumbnail %>"><br>
+  <label for="inv_price"> Price:</label><br>
+  <input type="text" id="inv_price" name="inv_price" required value="<%= inv_price %>"><br>
+  <label for="inv_year"> Year:</label><br>
+  <input type="text" id="inv_year" name="inv_year" required value="<%= inv_year %>"><br>
+  <label for="inv_miles"> Miles:</label><br>
+  <input type="text" id="inv_miles" name="inv_miles" required value="<%=inv_miles %>"><br>
+  <label for="inv_color">Color:</label><br>
+  <input type="text" name="inv_color" id="inv_color" required value="<%=inv_color %>"><br>
+  <button id="submit-btn" type="submit" form="edit-vehicle" disable>Update Vehicle</button><br>
+
+  <input type="hidden" name="inv_id"
+<% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+<% } %>>
+ 
+  </form>
+  <script src="../../js/inv-update.js"></script>
+  
