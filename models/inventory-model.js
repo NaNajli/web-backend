@@ -39,15 +39,34 @@ async function getInventoryByInventoryId(inv_id){
       JOIN public.classification AS c 
       ON i.classification_id = c.classification_id
       WHERE inv_id = $1 ;`
-       ,[inv_id]
-      
+       ,[inv_id]  
   )
-  return data.rows
+    return data.rows
 }catch (error){
   console.error("getspecificVehicle error " + error)
-}
+  
 }
 
+}
+/* ***************************
+ *  to retrive data edit inventory 
+ * ************************** */
+
+async function getInventoryInventoryId(inv_id){
+  try{
+  const data = await pool.query(`SELECT inv_make , inv_model, inv_year, inv_price, inv_image, inv_description , inv_miles ,inv_color FROM public.inventory AS i 
+      JOIN public.classification AS c 
+      ON i.classification_id = c.classification_id
+      WHERE inv_id = $1 ;`
+       ,[inv_id]  
+  )
+    return data.rows[0]
+}catch (error){
+  console.error("getspecificVehicle error " + error)
+  
+}
+
+}
 
 async function addNewClassification(classification_name)
 {
@@ -72,9 +91,19 @@ async function addNewClassification(classification_name)
     return error.message 
   }
 }
-*/
 
-async function addNewInventory(classification_id,inv_make , inv_model,inv_description, inv_image,inv_thumbnail,inv_price,inv_year,inv_miles,inv_color)
+*/
+async function addNewInventory(
+  classification_id,
+  inv_make,
+  inv_model,
+  inv_description,
+  inv_image,
+  inv_thumbnail,
+  inv_price,
+  inv_year,
+  inv_miles,
+  inv_color)
 {
   try{
       const sql = "INSERT INTO inventory (classification_id,inv_make , inv_model,inv_description, inv_image,inv_thumbnail,inv_price,inv_year,inv_miles,inv_color) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *";
@@ -123,4 +152,4 @@ async function updateInventory(
   }
 }
 
-module.exports = {getClassifications, getInventoryByClassificationId, getInventory,getInventoryByInventoryId , addNewClassification, addNewInventory,updateInventory};
+module.exports = {getClassifications, getInventoryByClassificationId, getInventory,getInventoryByInventoryId , addNewClassification, addNewInventory,updateInventory, getInventoryInventoryId};

@@ -41,10 +41,14 @@ utilities.handleErrors(invController.getInventoryJSON))
 //view to edit inventory
 router.get("/edit/:inv_id", 
 utilities.handleErrors(invController.viewInventoryUpdate))  
- 
-router.post("/edit/:inv_id", 
-      regValidate.newInventoryRules(),
-      regValidate.checkUpdateData,
+
+
+//view to update 
+router.post("/update/", 
+     // regValidate.newInventoryRules(),
+     // regValidate.checkUpdateData,
       utilities.handleErrors(invController.updateInventory))
  
+      
+         
 module.exports = router;

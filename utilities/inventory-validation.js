@@ -87,7 +87,7 @@ const utilities = require(".")
           .trim()
           .escape()
           .notEmpty()
-         // .isLength({ min: 1 })
+          .isLength({ min: 3 })
           .withMessage("Please provide a Make."), // on error this message is sent.
     
      
@@ -95,36 +95,36 @@ const utilities = require(".")
           .trim()
           .escape()
           .notEmpty()
-         // .isLength({ min: 2 })
+          .isLength({ min: 3 })
           .withMessage("Please provide Model."), // on error this message is sent.
   
           body("inv_description")
           .trim()
           .escape()
           .notEmpty()
-          .isLength({ min: 2 })
+          .isLength({ min: 3 })
           .withMessage("Please provide Description."), // on error this message is sent.
      
   
-          body("inv_imagen")
-          .trim()
-          //.escape()
-          .notEmpty()
-          .isLength({ min: 2 })
-          .withMessage("Please provide path."),
-  
-          body("inv_thumbnail")
-          .trim()
-          //.escape()
-          .notEmpty()
-          .isLength({ min: 2 })
-          .withMessage("Please provide path."),
+         // body("inv_imagen")
+         // .trim()
+         // //.escape()
+         // .notEmpty()
+         // //.isLength({ min:  })
+         // .withMessage("Please provide path."),
+  //
+         // body("inv_thumbnail")
+         // .trim()
+         // //.escape()
+         // .notEmpty()
+         //// .isLength({ min: 3 })
+         // .withMessage("Please provide path."),
   
           body("inv_price")
           .trim()
           .escape()
           .notEmpty()
-          .isLength({ min: 2 })
+          .isLength({ min: 3 })
           .withMessage("Please provide price."),
   
           body("inv_year")
@@ -138,14 +138,14 @@ const utilities = require(".")
           .trim()
           .escape()
           .notEmpty()
-          .isLength({ min: 2 })
+          .isLength({ min: 3 })
           .withMessage("Please provide Miles."),
   
           body("inv_color")
           .trim()
           .escape()
           .notEmpty()
-          .isLength({ min: 2 })
+          .isLength({ min: 3 })
           .withMessage("Please provide color."),
     
         
