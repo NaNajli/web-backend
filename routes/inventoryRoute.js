@@ -53,7 +53,8 @@ router.post("/update/",
 router.get("/delete/:inv_id", utilities.handleErrors(invController.deleteView)) 
 
 //route to delete
-router.post("/delete", utilities.handleErrors(invController.deleteItem))
+router.post("/delete/", 
+      utilities.handleErrors(invController.deleteItem))
  
       
          

@@ -190,7 +190,7 @@ invCont.viewInventoryUpdate = async function(req, res, next)
 { 
   const inv_id = parseInt(req.params.inv_id)
   let nav = await utilities.getNav()
-  const itemData = await invModel.getInventoryInventoryId(inv_id)
+  const itemData = await invModel.getInventoryByInventoryId(inv_id)
   const  classificationList = await utilities.buildClassificationList(itemData.classification_id)
   const itemName = `${itemData.inv_make} ${itemData.inv_model}`
   res.render("./inventory/edit-inventory", {
@@ -249,7 +249,7 @@ invCont.updateInventory = async function (req, res, next) {
   if (updateResult) {
     const itemName = updateResult.inv_make + " " + updateResult.inv_model
     req.flash("notice", `The ${itemName} was successfully updated.`)
-    res.redirect("/inventory/management")
+    res.redirect("/inv/")
   } else {
     const classificationList = await utilities.buildClassificationList(classification_id)
     const itemName = `${inv_make} ${inv_model}`
@@ -281,7 +281,7 @@ invCont.updateInventory = async function (req, res, next) {
 invCont.deleteView = async function(req, res, next){ 
   const inv_id = parseInt(req.params.inv_id)
   let nav = await utilities.getNav()
-  const itemData = await invModel.getInventoryInventoryId(inv_id)
+  const itemData = await invModel.getInventoryByInventoryId(inv_id)
   const itemName = `${itemData.inv_make} ${itemData.inv_model}`
   res.render("./inventory/delete-confirm", {
     title: "Delete " + itemName ,
@@ -300,14 +300,16 @@ invCont.deleteView = async function(req, res, next){
  * ************************** */
 invCont.deleteItem = async function (req, res, next) {
   let nav = await utilities.getNav()
-  const inv_id = parseInt(req.params.inv_id)
+  const {
+    inv_id,
+  } = req.body
   const deleteResult = await invModel.deleteInventoryItem(inv_id)
   if (deleteResult){
    req.flash("notice",'The deletion was successful')
    res.redirect('/inv/')
   }else{
     req.flash("notice", 'Sorry , the delete failed')
-    res.redirect("inv/delete/inv_id")
+    res.redirect("/inv/")
   }
   
   }
