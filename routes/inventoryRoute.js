@@ -38,16 +38,22 @@ router.post("/add-inventory",
 router.get("/getInventory/:classification_id", 
 utilities.handleErrors(invController.getInventoryJSON))     
 
-//view to edit inventory
+//view to update
 router.get("/edit/:inv_id", 
 utilities.handleErrors(invController.viewInventoryUpdate))  
 
 
-//view to update 
+//view to edit inventory
 router.post("/update/", 
-     // regValidate.newInventoryRules(),
-     // regValidate.checkUpdateData,
+      regValidate.newInventoryRules(),
+      regValidate.checkUpdateData,
       utilities.handleErrors(invController.updateInventory))
+
+//router to delete view 
+router.get("/delete/:inv_id", utilities.handleErrors(invController.deleteView)) 
+
+//route to delete
+router.post("/delete", utilities.handleErrors(invController.deleteItem))
  
       
          
