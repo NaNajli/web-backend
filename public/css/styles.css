@@ -274,6 +274,13 @@ text-align: left;}
   font-size: medium;
   
   }
+/* NEW CARS */
+
+.new-cars{align-items: center;
+
+font-family: "Marcellus";}
+
+.slideshow-container{text-align: center;}
 
 
 @media screen and (max-width: 800px)
@@ -317,4 +324,9 @@ text-align: left;}
     } 
 /* form */
     #email, #password{font-size: large;}  
+
+
+    /* UPCOMMING */
+
+    .slideshow-container img{max-width:40vw;}
 }

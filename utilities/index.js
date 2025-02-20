@@ -1,4 +1,5 @@
 const invModel = require("../models/inventory-model")
+const upcModel = require("../models/upcoming-model")
 const Util = {}
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
@@ -163,6 +164,31 @@ Util.buildClassificationList = async function (classification_id = null) {
   return classificationList
 }
 
+//  build upcoming View
+Util.buildNewCarView = async function(data){
+  let newCar 
+  if(data) {
+    newCar = '<div class="slideshow-container">'
+    data.forEach(car => {  
+    newCar += '<div class="mySlides fade">'
+    newCar += '<h1>' + car.upc_name + '</h1>'
+    newCar += '<img src="'+ car.upc_image + '" alt="Image of "/>'
+    newCar += '<h1>'+' Price :'+'<span> $' + new Intl.NumberFormat('en-US').format(car.upc_price) + '</span>'+'</h1>'
+    newCar += '<p>' + car.upc_description + '</p>'
+    newCar += '</div>'
+    newCar += '</li>'  
+    // newCar += '<a class="prev" onclick="plusSlides(-1)">&#10094;</a>'
+    // newCar += '<a class="next" onclick="plusSlides(1)">&#10095;</a>'  
+   });
+    newCar += '</div>'
+  } else { 
+    newCar += '<p class="notice">Sorry, no matching vehicles could be found.</p>'
+   
+  }
+  return newCar
+  
+}
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for 
@@ -204,8 +230,6 @@ Util.checkJWTToken = (req, res, next) => {
     return res.redirect("/account/login")
   }
  }
-
- 
 
 
 module.exports = Util

@@ -8,3 +8,9 @@ CREATE TABLE IF NOT EXISTS public.upcoming (
     upc_rate numeric (9, 0) NOT NULL,
     CONSTRAINT upcoming_pkey PRIMARY KEY(upc_id)
 );
+-- inserting values
+INSERT INTO public.upcoming (upc_name ,upc_image,upc_description,upc_price , upc_rate)
+VALUES ('Nissan','/images/new/erikmclean.jpg','', 3400,0),
+    ('Ford Mustang','/images/new/lanceasper.jpg','',5600,0),
+    ('Chevrolet Camaro','/images/new/stefanrodriguez.jpg', '',4500,0),
+    ('Acura NSX ','/images/new/tomstrecker.jpg','',4000,0);
