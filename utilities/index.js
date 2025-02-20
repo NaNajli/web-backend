@@ -141,48 +141,7 @@ Util.buildMngView = async function()
       viewMng += '</ul>' 
       return viewMng
 }
-/*
-Util.buildClassificationList = async function (classification_id = null) {
-  let data = await invModel.getClassifications()
-  let classificationList = '<form class="add-inventory-form" action="add-inventory" method="post">'+'<br>'
-  classificationList +=  '<select name="classification_id" id="classificationList" required>'
-  classificationList += "<option value=''>Choose a Classification</option>"
-  data.rows.forEach((row) => {
-    classificationList += '<option value="' + row.classification_id + '"'
-    if (
-      classification_id != null &&
-      row.classification_id == classification_id
-    ) {
-      classificationList += " selected "
-    }
-    classificationList += ">" + row.classification_name + "</option>"
-  })
-  classificationList += "</select>" +'<br>'
-  classificationList += '<label for="make">Make:</label><br>'
-  classificationList += '<input type="text" name="inv_make" id="inv_make" required value="" ><br>'
-  classificationList += '<label for="model">Model:</label><br>'
-  classificationList += '<input type="text" name="inv_model" id="inv_model" required value=""><br>'
-  classificationList += '<label for="description"> Description:</label><br>'
-  classificationList += '<textarea name="inv_description"  rows="6" cols="30" required> </textarea><br>'
-  classificationList += '<label for= "image">Imagen Path:<br>'
-  classificationList += '<input type="text" name="inv_image" id="inv_image" required><br>'
-  classificationList += '<label for= "imaget">Thumbnail Path:<br>'
-  classificationList += '<input type="text" name="inv_thumbnail" id="inv_thumbnail" required><br>'
-  classificationList += '<label for="price"> Price:<br>'
-  classificationList += '<input type="text" id="inv_price" name="inv_price" required><br>'
-  classificationList += '<label for="year"> Year:<br>'
-  classificationList += '<input type="text" id="inv_year" name="inv_year" required><br>'
-  classificationList += '<label for="miles"> Miles:<br>'
-  classificationList += '<input type="text" id="inv_miles" name="inv_miles" required><br>'
-  classificationList += '<label for="color">Color:</label><br>'
-  classificationList += '<input type="text" name="inv_color" id="inv_color" required value=""><br>'
-  classificationList += '<input type="submit" id="submit" value="Add Vehicle">'
-  classificationList += '</form>'
- 
 
-  return classificationList
-}
-*/
 // Building  classification List
 
 Util.buildClassificationList = async function (classification_id = null) {
