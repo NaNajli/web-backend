@@ -39,12 +39,26 @@ async function getInventoryByInventoryId(inv_id){
       WHERE inv_id = $1 ;`
        ,[inv_id]  
   )
+    return data.rows
+}catch (error){
+  console.error("getspecificVehicle error " + error)
+  
+}
+}
+
+async function getInventoryByInventoryIdIndex(inv_id){
+  try{
+  const data = await pool.query(`SELECT * FROM public.inventory
+      WHERE inv_id = $1 ;`
+       ,[inv_id]  
+  )
     return data.rows[0]
 }catch (error){
   console.error("getspecificVehicle error " + error)
   
 }
 }
+
 
 async function addNewClassification(classification_name)
 {
@@ -132,4 +146,4 @@ async function deleteInventoryItem(inv_id) {
   }
 }
 
-module.exports = {getClassifications, getInventoryByClassificationId, getInventory,getInventoryByInventoryId , addNewClassification, addNewInventory,updateInventory,deleteInventoryItem};
+module.exports = {getClassifications, getInventoryByClassificationId, getInventory,getInventoryByInventoryId , addNewClassification, addNewInventory,updateInventory,deleteInventoryItem,getInventoryByInventoryIdIndex};

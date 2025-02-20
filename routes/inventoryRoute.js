@@ -30,8 +30,8 @@ router.post("/add-classification",
       utilities.handleErrors(invController.addNewClassification))
 
 router.post("/add-inventory",
-     regValidate.registationRules(),
-     regValidate.checkRegData,
+     //regValidate.registationRules(),
+     //regValidate.checkRegData,
      utilities.handleErrors(invController.addNewInventory))
 
 
